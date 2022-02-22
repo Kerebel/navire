@@ -2,17 +2,21 @@
 
 namespace App\Controller;
 
+use App\Form\MessageType;
+use App\Service\GestionContact;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use App\Entity\Message;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/message", name="message_")
+ * @Route("/message", name="messagee_")
  */
 class MessageController extends AbstractController
 {
     /**
-     * @Route("/message", name="message")
+     * @Route("/contact", name="contact")
      */
     public function contact(Request $request, GestionContact $gestionContact):Response {
         $message = new Message();

@@ -1,9 +1,11 @@
 <?php
 
-use MailerInterface;
+namespace App\Service;
+
+use Symfony\Component\Mailer\MailerInterface;
 use Twig\Environment;
-use Symfony\Bridge\Doctrine\ManagerRegistry;
 use App\Repository\MessageRepository;
+use Doctrine\Persistence\ManagerRegistry;
 
 class GestionContact {
 // documentation : https://swiftmailer.symfony.com/docs/sending.html
