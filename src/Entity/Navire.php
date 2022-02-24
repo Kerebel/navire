@@ -51,7 +51,7 @@ class Navire
     private $mmsi;
 
     /**
-     * @ORM\Column(type="string", length=10)
+     * @ORM\Column(type="string", length=10, name="indicatifappel")
      */
     private $indicatifAppel;
 
@@ -82,6 +82,21 @@ class Navire
      * @ORM\OneToMany(targetEntity=Escale::class, mappedBy="leNavire", orphanRemoval=true)
      */
     private $lesEscales;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $longueur;
+
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $largeur;
+
+    /**
+     * @ORM\Column(type="decimal", precision=10, scale=1)
+     */
+    private $tirantEau;
 
     public function __construct()
     {
@@ -215,6 +230,42 @@ class Navire
                 $lesEscale->setLeNavire(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getLongueur(): ?int
+    {
+        return $this->longueur;
+    }
+
+    public function setLongueur(int $longueur): self
+    {
+        $this->longueur = $longueur;
+
+        return $this;
+    }
+
+    public function getLargeur(): ?int
+    {
+        return $this->largeur;
+    }
+
+    public function setLargeur(int $largeur): self
+    {
+        $this->largeur = $largeur;
+
+        return $this;
+    }
+
+    public function getTirantEau(): ?string
+    {
+        return $this->tirantEau;
+    }
+
+    public function setTirantEau(string $tirantEau): self
+    {
+        $this->tirantEau = $tirantEau;
 
         return $this;
     }
