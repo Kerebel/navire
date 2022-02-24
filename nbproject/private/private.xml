@@ -3,13 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/wamp64/www/CoursSymfony/navire/src/Service/GestionContact.php</file>
-            <file>file:/C:/wamp64/www/CoursSymfony/navire/migrations/Version20220222112454.php</file>
-            <file>file:/C:/wamp64/www/CoursSymfony/navire/templates/mail/mail.html.twig</file>
-            <file>file:/C:/wamp64/www/CoursSymfony/navire/.env</file>
-            <file>file:/C:/wamp64/www/CoursSymfony/navire/migrations/Version20220222112336.php</file>
-            <file>file:/C:/wamp64/www/CoursSymfony/navire/composer.json</file>
-            <file>file:/C:/wamp64/www/CoursSymfony/navire/src/Controller/MessageController.php</file>
+            <file>file:/C:/wamp64/www/CoursSymfony/navire/src/Entity/Pays.php</file>
+            <file>file:/C:/wamp64/www/CoursSymfony/navire/migrations/Version20220223084445.php</file>
+            <file>file:/C:/wamp64/www/CoursSymfony/navire/src/Entity/AisShipType.php</file>
         </group>
     </open-files>
 </project-private>
