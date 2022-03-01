@@ -94,9 +94,9 @@ class Navire
     private $largeur;
 
     /**
-     * @ORM\Column(type="decimal", precision=10, scale=1)
+     * @ORM\Column(type="decimal", precision=10, scale=1, name="tirandeau")
      */
-    private $tirantEau;
+    private $tirandeau;
 
     public function __construct()
     {
@@ -258,14 +258,14 @@ class Navire
         return $this;
     }
 
-    public function getTirantEau(): ?string
+    public function getTirandeau(): ?string
     {
-        return $this->tirantEau;
+        return $this->tirandeau;
     }
 
-    public function setTirantEau(string $tirantEau): self
+    public function setTirandeau(string $tirandeau): self
     {
-        $this->tirantEau = $tirantEau;
+        $this->tirandeau = $tirandeau;
 
         return $this;
     }

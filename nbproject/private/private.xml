@@ -3,9 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/wamp64/www/CoursSymfony/navire/src/Entity/Escale.php</file>
+            <file>file:/C:/wamp64/www/CoursSymfony/navire/src/Entity/Message.php</file>
             <file>file:/C:/wamp64/www/CoursSymfony/navire/src/Entity/Pays.php</file>
-            <file>file:/C:/wamp64/www/CoursSymfony/navire/migrations/Version20220223084445.php</file>
+            <file>file:/C:/wamp64/www/CoursSymfony/navire/src/Entity/Navire.php</file>
             <file>file:/C:/wamp64/www/CoursSymfony/navire/src/Entity/AisShipType.php</file>
+            <file>file:/C:/wamp64/www/CoursSymfony/navire/src/Entity/Port.php</file>
         </group>
     </open-files>
 </project-private>
