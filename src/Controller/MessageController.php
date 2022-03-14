@@ -11,7 +11,7 @@ use App\Entity\Message;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * @Route("/message", name="messagee_")
+ * @Route("/message", name="message_")
  */
 class MessageController extends AbstractController
 {

@@ -10,8 +10,8 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=NavireRepository::class)
- * @ORM\Table( name="navire" ,
- *          uniqueConstraints={@ORM\UniqueConstraint(name="mmsi_unique",columns={"mmsi"})}
+ * @ORM\Table( name="navire", 
+ *              uniqueConstraints={@ORM\UniqueConstraint(name="mmsi_unique", columns={"mmsi"})}
  * )
  */
 class Navire
@@ -61,8 +61,8 @@ class Navire
     private $eta;
 
     /**
-     * @ORM\ManyToOne(targetEntity=AisShipType::class, inversedBy="navires")
-     * @ORM\JoinColumn(nullable=false, name="idAisShiptype")
+     * @ORM\ManyToOne(targetEntity=AisShipType::class)
+     * @ORM\JoinColumn(nullable=false, name="idAisShipType")
      */
     private $leType;
 
@@ -73,8 +73,8 @@ class Navire
     private $lePavillon;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Port::class, inversedBy="naviresAttendus", cascade ={"persist"})
-     * @ORM\JoinColumn(name="idportdestination", nullable=true)
+     * @ORM\ManyToOne(targetEntity=Port::class, inversedBy="naviresAttendus", cascade={"persist"})
+     * @ORM\JoinColumn(name="idportdestination", nullable=false)
      */
     private $portDestination;
 

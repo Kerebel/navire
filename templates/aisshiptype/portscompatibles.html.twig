@@ -1,28 +1,25 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}Ports compatibles{% endblock %}
+{% extends "base.html.twig" %}
+{% block title %} Ports Compatibles {% endblock %}
 
 {% block body %}
-
-    <div class="container">
-        <table class="table table-hover">
+    <h2>Ports compatibles : {{ type }}</h2>
+    <div>
+        <table>
             <thead>
                 <tr>
-                    <th scope="col" style="width: 100px;">Type</th>
-                    <th scope="col">Libelle</th>
-                    <th scope="col">Actions</th>
+                    <th scope="col" style="width: 100px;">Nom</th>
+                    <th scope="col">Indicatif</th>
+                    <th scope="col">Pays</th>
                 </tr>
             </thead>
             <tbody>
                 {% for port in ports %}
                     <tr class="table-primary">
-                        <td>{{ port.idpays }}</td>
                         <td>{{ port.nom }}</td>
                         <td>{{ port.indicatif }}</td>
+                        <td>{{ port.lePays.nom }}</td>
                     </tr>
                 {% endfor %}
             </tbody>
         </table>
-                
-                
 {% endblock %}

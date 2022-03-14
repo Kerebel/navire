@@ -25,6 +25,11 @@ class AisShipType
      * @ORM\Column(type="string", length=60)
      */
     private $libelle;
+    
+    /**
+     * @ORM\ManyToMany(targetEntity=Port::class, mappedBy="lesTypes")
+     */
+    private $lesPorts;
 
     /**
      * @ORM\Column(type="integer", name="aisshiptype")
@@ -37,21 +42,11 @@ class AisShipType
      */
     private $aisShipType;
 
-    /**
-     * @ORM\ManyToMany(targetEntity=Port::class, inversedBy="lesTypes")
-     * @ORM\JoinTable(
-     *      name="porttypecompatible",
-     *      joinColumns={@ORM\JoinColumn(name="idaistype", referencedColumnName="id")},
-     *      inverseJoinColumns={@ORM\JoinColumn(name="idport", referencedColumnName="id")}
-     * )
-     */
-    private $lesPorts;
-
     public function __construct()
     {
-        $this->navires = new ArrayCollection();
         $this->lesPorts = new ArrayCollection();
     }
+    
 
     public function getId(): ?int
     {
@@ -66,48 +61,6 @@ class AisShipType
     public function setLibelle(string $libelle): self
     {
         $this->libelle = $libelle;
-
-        return $this;
-    }
-
-    public function getAisShipType(): ?int
-    {
-        return $this->aisShipType;
-    }
-
-    public function setAisShipType(int $aisShipType): self
-    {
-        $this->aisShipType = $aisShipType;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Navire[]
-     */
-    public function getNavires(): Collection
-    {
-        return $this->navires;
-    }
-
-    public function addNavire(Navire $navire): self
-    {
-        if (!$this->navires->contains($navire)) {
-            $this->navires[] = $navire;
-            $navire->setLeType($this);
-        }
-
-        return $this;
-    }
-
-    public function removeNavire(Navire $navire): self
-    {
-        if ($this->navires->removeElement($navire)) {
-            // set the owning side to null (unless already changed)
-            if ($navire->getLeType() === $this) {
-                $navire->setLeType(null);
-            }
-        }
 
         return $this;
     }
@@ -132,6 +85,18 @@ class AisShipType
     public function removeLesPort(Port $lesPort): self
     {
         $this->lesPorts->removeElement($lesPort);
+
+        return $this;
+    }
+
+    public function getAisShipType(): ?int
+    {
+        return $this->aisShipType;
+    }
+
+    public function setAisShipType(int $aisShipType): self
+    {
+        $this->aisShipType = $aisShipType;
 
         return $this;
     }
