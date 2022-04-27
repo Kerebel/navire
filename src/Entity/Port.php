@@ -11,7 +11,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * @ORM\Entity(repositoryClass=PortRepository::class)
  * @ORM\Table( name="port" ,
- *            uniqueConstraints={@ORM\UniqueConstraint(name="portindicatif_unique", columns={"indicatif"})}
+ *              uniqueConstraints={@ORM\UniqueConstraint(name="portindicatif_unique", columns={"indicatif"})}
  * )
  */
 class Port
@@ -32,7 +32,8 @@ class Port
      * @ORM\Column(type="string", length=5)
      * @Assert\Regex(
      *      pattern="/[A-Z]{5}/",
-     *      message="L'indicatif du Port a strictement 5 caractères")
+     *      message="L'indicatif du Port a strictement 5 caractères"
+     * )
      */
     private $indicatif;
 
@@ -43,12 +44,17 @@ class Port
     private $lePays;
 
     /**
-     * @ORM\ManyToMany(targetEntity=AisShipType::class, mappedBy="lesPorts")
+     * @ORM\ManyToMany(targetEntity=AisShipType::class, inversedBy="lesPorts")
+     * @ORM\JoinTable(
+     *      name="porttypecompatible",
+     *      joinColumns={@ORM\JoinColumn(name="idport", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="idaistype", referencedColumnName="id")}
+     * )
      */
     private $lesTypes;
 
     /**
-     * @ORM\OneToMany(targetEntity=Navire::class, mappedBy="portDestination")
+     * @ORM\OneToMany(targetEntity=Navire::class, mappedBy="portDestination", cascade={"persist"})
      */
     private $naviresAttendus;
 
